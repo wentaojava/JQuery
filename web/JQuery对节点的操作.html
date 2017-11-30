@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //1.读写节点的内容html()等价于innerHTML;text()等价于innerText
+            console.log($("p:first").html());
+              // 修改
+            $("p:first").html("Jquery可以<u>读写</u>节点");
+            //2.读写节点的值 val()等价于value
+            console.log($(":button:first").val());
+            $(":button:first").val("按钮");
+            //3.读写节点的属性  attr()等价于setAttribute()和getAttribute
+            console.log($("img:first").attr("src"));
+            $("img:first").attr("src","test/5.jpg");
+        })
+
+        function f1() {
+            //创建一个节点
+            var ct=$("<li>城市7</li>");
+            //追加节点
+            $("ul").append(ct);
+        }
+        function f2() {
+            //创建一个节点
+            var ct=$("<li>插入的城市</li>");
+            //插入节点
+            $("#cs3").after(ct);
+        }
+        function f3() {
+            $("#cs6").remove();
+
+        }
+    </script>
+</head>
+<body>
+<div>
+    <p>Jquery可以<b>读写</b>节点</p>
+    <p>Jquery可以<b>增删</b>节点</p>
+    <p>Jquery可以<b>查询</b>节点</p>
+    <input type="button" value="anniu"/>
+    <p>
+        <img src="4.png"/>
+    </p>
+    <p>
+    <ul>
+        <li>城市1</li>
+        <li>城市2</li>
+        <li id="cs3">城市3</li>
+        <li>城市4</li>
+        <li>城市5</li>
+        <li id="cs6">城市6</li>
+    </ul>
+    </p>
+    <input type="button" value="追加节点" onclick="f1();"/>
+    <input type="button" value="插入节点" onclick="f2();"/>
+    <input type="button" value="删除节点" onclick="f3();"/>
+</div>
+</body>
+</html>
