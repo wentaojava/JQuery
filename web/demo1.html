@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script>
+        function big() {
+            //$("p")等价于 document.getElementById("p")
+            var size=$("p").css("font-size");//获取字号，默认16px
+            //去除单位
+            size=size.replace("px","");
+            //字号加1再设置给所有段落
+            $("p").css("font-size",++size+"px");
+        }
+        function smaller() {
+            var size=$("p").css("font-size");
+            size=size.replace("px","");
+            $("p").css("font-size",--size+"px");
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="+" onclick="big();"/>
+<input type="button" value="-" onclick="smaller();"/>
+<p>jQuery是一个快速、简洁的JavaScript框架</p>
+<p>是继Prototype之后又一个优秀的JavaScript代码库</p>
+<p>jQuery设计的宗旨是“write Less，Do More”</p>
+</body>
+</html>

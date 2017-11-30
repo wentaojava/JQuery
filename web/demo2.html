@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script>
+        function pr() {
+           console.log($("p")[0].innerHTML) ;
+
+        }
+        function f1(img) {
+            if($(img).width()==150){
+               $(img).width(250).height(250);
+            }else{
+                $(img).width(150).height(150);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="打印" onclick="pr();"/>
+<p>jQuery是一个快速、简洁的JavaScript框架</p>
+<p>是继Prototype之后又一个优秀的JavaScript代码库</p>
+<p>jQuery设计的宗旨是“write Less，Do More”</p>
+<div>
+    <img src="4.png" onclick="f1(this);"/>
+</div>
+</body>
+</html>
