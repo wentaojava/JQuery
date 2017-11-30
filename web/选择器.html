@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script>
+       //下面的等价于window.onload=function () {}
+        $(function () {
+            //1.基本选择器
+            //2.层次选择器
+               //选择下一个弟弟
+            console.log($("#cs3+li"));
+               //选择所有弟弟
+            console.log($("#cs3~li"));
+            //3.过滤选择器
+             //3.1基本过滤（必须掌握）
+            console.log($("li:first"));
+            console.log($("li:even"));
+            console.log($("li:lt(2)"));
+            console.log($("li:not(#cs3)"));
+             //3.2内容过滤
+            console.log($("li:contains(3)"));
+             //3.3可见性过滤
+            console.log($("li:hidden"));
+             //3.4属性过滤
+
+             //3.5状态过滤
+
+
+
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>城市1</li>
+    <li>城市2</li>
+    <li id="cs3">城市3</li>
+    <li>城市33</li>
+    <li style="display: none">城市4</li>
+    <li>城市5</li>
+    <li>城市6</li>
+
+</ul>
+</body>
+</html>
