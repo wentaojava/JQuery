@@ -16,7 +16,17 @@
             //3.读写节点的属性  attr()等价于setAttribute()和getAttribute
             console.log($("img:first").attr("src"));
             $("img:first").attr("src","test/5.jpg");
-        })
+            //根据层次查询节点
+            var cs=$("#cs3");
+             //获取父节点
+            console.log(cs.parent());
+            //获取上一个兄弟节点
+            console.log(cs.prev());
+             //获取所有兄弟节点
+            console.log(cs.siblings());
+
+
+        });
 
         function f1() {
             //创建一个节点

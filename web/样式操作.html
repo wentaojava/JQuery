@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .big{
+            font-size: 30px;
+        }
+        .important{
+            color:red;
+        }
+    </style>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //添加样式
+            $("#p1").addClass("big").addClass("important");
+            //移除样式
+            $("#p1").removeClass("big");
+            //查询是否有样式
+            console.log($("#p1").hasClass("big"));
+
+        });
+        function f1() {
+            //切换样式
+            $("#p1").toggleClass("big");
+            //隐藏？
+            //$("#p1").toggle("big");
+        }
+    </script>
+</head>
+<body>
+<p id="p1">jQuery是一个快速、简洁的JavaScript框架</p>
+<p>是继Prototype之后又一个优秀的JavaScript代码库</p>
+<p>jQuery设计的宗旨是“write Less，Do More”</p>
+<input type="button" value="替换" onclick="f1();"/>
+</body>
+</body>
+</html>
