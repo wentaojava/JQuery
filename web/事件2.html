@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            border:1px solid red;
+            height: 600px;
+        }
+        div input{
+            float: right;
+            margin: 5px;
+        }
+    </style>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //给按钮绑定单击事件
+            $("#gg input").click(function () {
+                //广告区域向上收取
+                $("#gg").slideUp(600);//参数为时间
+            });
+            //3s之后自动关闭
+            setTimeout(function () {
+              $("#gg input").trigger("click");
+            },3000);
+        });
+    </script>
+</head>
+<body>
+<div id="gg">
+    <input type="button" value="x"/>
+</div>
+</body>
+</html>

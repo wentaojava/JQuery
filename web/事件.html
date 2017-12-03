@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .big{
+            width:250px;
+            height: 250px;
+        }
+    </style>
     <script src="js/jquery-1.11.1.js"></script>
     <script>
         $(function () {
@@ -10,10 +16,28 @@
             $(":button:first").click(function () {
                 alert("演示");
             });
+            //给图片绑定悬停事件
+            $("img").hover(
+                function () {
+                $(this).addClass("big");
+            },//悬停时
+                function () {
+                $(this).removeClass("big");
+            });//离开时
+
+            //给按钮"显示/隐藏图片"绑定事件
+            $(":button:eq(1)").click(function () {
+                //控制图片显示或隐藏
+                $("img").toggle();
+            });
         });
     </script>
 </head>
 <body>
 <input type="button" value="事件演示" />
+<p><img src="4.png"/></p>
+<p>
+    <input type="button" value="显示/隐藏图片"/>
+</p>
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:200px;
+            height: 200px;
+            background-color: red;
+            position: relative;//相对定位
+        }
+    </style>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script>
+        function f1() {
+         $("div").show(3000);
+        }
+        function f2() {
+        $("div").hide(3000,function () {
+            console.log("隐藏结束");
+        });//第一个参数是时间，第二个参数是动画定时器结束后自动调用
+            //被自动调用的函数称为回调函数
+        }
+        //页面加载完成
+        $(function () {
+            //给div绑定鼠标悬停事件
+            $("div").hover(
+                function () {
+                    //悬停时
+                    $(this).animate({"left":"30px"},600);
+                },
+                function () {
+                    //鼠标离开时
+                    $(this).animate({"left":"0px"},600);
+                }
+            );
+
+        });
+    </script>
+</head>
+<body>
+<p>
+    <input type="button" value="显示" onclick="f1();"/>
+    <input type="button" value="隐藏" onclick="f2();"/>
+</p>
+<div>演示动画</div>
+</body>
+</html>
